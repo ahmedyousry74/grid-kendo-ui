@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  direction: ltr;
+  text-align: start;
+  overflow-x: hidden;
+  font-family: 'Tajawal', sans-serif;
+  padding: 10px 25px;
+  background-color: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #186db5;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+li,
+label {
+  text-transform: capitalize;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+button {
+  outline: 0;
+  border: 0;
+  background: transparent;
+}
+
+#grid {
+  border: 0 !important;
+}
+
+#grid table thead th {
+  border: 0 !important;
+  background-color: #181818;
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  #grid table thead th {
+    width: 150px;
+  }
+}
+
+#grid table tbody tr, #grid table tbody td {
+  background-color: #181818;
+  color: #f0f0f0;
+  border: 0;
+  border-bottom: thin solid rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 767px) {
+  #grid table tbody tr, #grid table tbody td {
+    width: 150px;
+  }
+}
+
+#grid table .edit-button {
+  background-color: #9b7128;
+  border: 0;
+  border-radius: 2px;
+  background-image: none;
+  color: #fff;
+}
+
+#grid table .edit-button:focus {
+  border: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+#grid table .delete-button {
+  background-color: #ff5252;
+  border: 0;
+  border-radius: 2px;
+  background-image: none;
+  color: #fff;
+}
+
+#grid table .k-header {
+  background-image: none !important;
+  padding: 15px 11px;
+}
+
+#grid table .k-checkbox {
+  border-radius: 0;
+}
+
+#grid table .k-checkbox:checked,
+#grid table .k-checkbox:focus {
+  border-color: #c5c5c5;
+  color: #181818;
+  background-color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+#grid table tr.k-state-selected {
+  background-color: #616161 !important;
+}
+
+#grid table tr.k-state-selected td {
+  background-color: #616161 !important;
+}
+
+#grid table span.status-badge {
+  background-color: #3b7f34;
+  border-color: #3b7f34;
+  width: 54px;
+  color: white;
+  font-size: 12px;
+  height: 24px;
+  cursor: default;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 20px;
+  max-width: 100%;
+  outline: none;
+  overflow: hidden;
+  padding: 2px 12px;
+  position: relative;
+  text-decoration: none;
+  -webkit-transition-duration: .28s;
+          transition-duration: .28s;
+  -webkit-transition-property: opacity,-webkit-box-shadow;
+  transition-property: opacity,-webkit-box-shadow;
+  transition-property: box-shadow,opacity;
+  transition-property: box-shadow,opacity,-webkit-box-shadow;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 3px;
+}
+
+#grid table span.camp-badge {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: default;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 20px;
+  max-width: 100%;
+  outline: none;
+  overflow: hidden;
+  padding: 0 12px;
+  position: relative;
+  text-decoration: none;
+  -webkit-transition-duration: .28s;
+          transition-duration: .28s;
+  -webkit-transition-property: opacity,-webkit-box-shadow;
+  transition-property: opacity,-webkit-box-shadow;
+  transition-property: box-shadow,opacity;
+  transition-property: box-shadow,opacity,-webkit-box-shadow;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  vertical-align: middle;
+  white-space: nowrap;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 5px 15px;
+  border-radius: 3px;
+}
+
+#grid .k-pager-wrap {
+  background-color: #181818;
+  background-image: none;
+  padding: 10px;
+  border: 0;
+}
+
+#grid .k-pager-wrap .k-link {
+  color: #f0f0f0;
+  border: 0;
+}
+
+#grid .k-pager-wrap .k-pager-numbers .k-state-selected, #grid .k-pager-wrap .k-pager-numbers-wrap .k-state-selected {
+  color: #181818 !important;
+  background-color: #f0f0f0;
+}
+
+#grid .k-pager-wrap .k-link:hover {
+  color: #181818 !important;
+  background-color: #f0f0f0;
+}
+
+#grid .k-pager-wrap .k-pager-info.k-label {
+  color: #f0f0f0;
+}
+
+#grid .k-grid-header-wrap, #grid .k-grid-header {
+  border: 0;
+}
+
+#grid .k-grid-content {
+  border-top: thin solid #303030fa !important;
+  overflow-y: hidden;
+}
+
+#grid .k-grid-header {
+  padding-right: 0 !important;
+}
+
+.edit_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.edit_form #saveButton {
+  background-color: #3b7f34;
+  border: 0;
+  padding: 5px 20px;
+}
+
+.edit_form #cancelButton {
+  background-color: #ff5252;
+  color: #fff;
+  border: 0;
+  padding: 5px 20px;
+}
+
+.theme {
+  --primary-color: #121212;
+  --second-color: #181818;
+  --third-color: #f0f0f0;
+  --fourth-color: #c8a45d;
+  --gradient: linear-gradient(to right, rgb(0 203 156 / 70%), rgb(125 185 0 / 70%));
+}
+
+.title_ {
+  text-align: center;
+  padding: 15px;
+}
+
+.title_ h1 {
+  color: #f0f0f0;
+}
+/*# sourceMappingURL=main.css.map */

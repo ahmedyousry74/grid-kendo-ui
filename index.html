@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://kendo.cdn.telerik.com/2021.1.119/styles/kendo.common.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://kendo.cdn.telerik.com/2021.1.119/styles/kendo.default.min.css"
+    />
+    <link rel="stylesheet" href="./sass/main.css" />
+    <style>
+      .container {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 10px;
+      }
+
+      /* Adjust styles for smaller screens */
+      @media (max-width: 768px) {
+        .container {
+          padding: 0;
+        }
+      }
+    </style>
+    <title>List Of Grid</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2021.1.119/js/kendo.all.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title_">
+        <h1>List Of Grid</h1>
+      </div>
+      <div class="k-grid-responsive">
+        <div id="grid"></div>
+      </div>
+    </div>
+
+    <!-- Popup Template -->
+    <script id="editPopupTemplate" type="text/x-kendo-template">
+      <div class="edit_form">
+        <div>
+            <label for="editName">campaignName:</label>
+            <input id="editName" class="k-textbox" data-bind="value: campaignName" />
+        </div>
+        <div>
+            <button class="k-button k-primary" id="saveButton">Save</button>
+            <button class="k-button" id="cancelButton">Cancel</button>
+        </div>
+      </div>
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        var dataSource = new kendo.data.DataSource({
+          data: [
+            {
+              id: 1,
+              campaignName: "Camapign 1",
+              brandName: "Brand 1",
+              countries: "Eg",
+              startDate: "19-5-2020",
+              EndDate: "27-11-2020",
+              Status: "Active",
+            },
+            {
+              id: 2,
+              campaignName: "Camapign 2",
+              brandName: "Brand 2",
+              countries: "Ksa",
+              startDate: "19-5-2020",
+              EndDate: "27-11-2020",
+              Status: "Active",
+            },
+            {
+              id: 3,
+              campaignName: "Camapign 3",
+              brandName: "Brand 3",
+              countries: "Eg",
+              startDate: "19-5-2020",
+              EndDate: "27-11-2020",
+              Status: "Active",
+            },
+            {
+              id: 4,
+              campaignName: "Camapign 4",
+              brandName: "Brand 4",
+              countries: "Eg",
+              startDate: "19-5-2020",
+              EndDate: "27-11-2020",
+              Status: "Active",
+            },
+            {
+              id: 5,
+              campaignName: "Camapign 5",
+              brandName: "Brand 5",
+              countries: "Eg",
+              startDate: "19-5-2020",
+              EndDate: "27-11-2020",
+              Status: "Active",
+            },
+            {
+              id: 6,
+              campaignName: "Camapign 6",
+              brandName: "Brand 6",
+              countries: "Eg",
+              startDate: "19-5-2020",
+              EndDate: "27-11-2020",
+              Status: "Active",
+            },
+            {
+              id: 7,
+              campaignName: "Camapign 7",
+              brandName: "Brand 7",
+              countries: "Eg",
+              startDate: "19-5-2020",
+              EndDate: "27-11-2020",
+              Status: "Active",
+            },
+            {
+              id: 8,
+              campaignName: "Camapign 8",
+              brandName: "Brand 8",
+              countries: "Eg",
+              startDate: "19-5-2020",
+              EndDate: "27-11-2020",
+              Status: "Active",
+            },
+            {
+              id: 9,
+              campaignName: "Camapign 9",
+              brandName: "Brand 9",
+              countries: "Eg",
+              startDate: "19-5-2020",
+              EndDate: "27-11-2020",
+              Status: "Active",
+            },
+            {
+              id: 10,
+              campaignName: "Camapign 10",
+              brandName: "Brand 10",
+              countries: "Eg",
+              startDate: "19-5-2020",
+              EndDate: "27-11-2020",
+              Status: "Active",
+            },
+            {
+              id: 11,
+              campaignName: "Camapign 11",
+              brandName: "Brand 11",
+              countries: "Eg",
+              startDate: "19-5-2020",
+              EndDate: "27-11-2020",
+              Status: "Active",
+            },
+            {
+              id: 12,
+              campaignName: "Camapign 12",
+              brandName: "Brand 12",
+              countries: "Eg",
+              startDate: "19-5-2020",
+              EndDate: "27-11-2020",
+              Status: "Active",
+            },
+            {
+              id: 13,
+              campaignName: "Camapign 13",
+              brandName: "Brand 13",
+              countries: "Eg",
+              startDate: "19-5-2020",
+              EndDate: "27-11-2020",
+              Status: "Active",
+            },
+            {
+              id: 14,
+              campaignName: "Camapign 14",
+              brandName: "Brand 14",
+              countries: "Eg",
+              startDate: "19-5-2020",
+              EndDate: "27-11-2020",
+              Status: "Active",
+            },
+            {
+              id: 15,
+              campaignName: "Camapign 15",
+              brandName: "Brand 15",
+              countries: "Eg",
+              startDate: "19-5-2020",
+              EndDate: "27-11-2020",
+              Status: "Active",
+            },
+            {
+              id: 16,
+              campaignName: "Camapign 16",
+              brandName: "Brand 16",
+              countries: "Eg",
+              startDate: "19-5-2020",
+              EndDate: "27-11-2020",
+              Status: "Active",
+            },
+            {
+              id: 16,
+              campaignName: "Camapign 17",
+              brandName: "Brand 17",
+              countries: "Eg",
+              startDate: "19-5-2020",
+              EndDate: "27-11-2020",
+              Status: "Active",
+            },
+            {
+              id: 16,
+              campaignName: "Camapign 18",
+              brandName: "Brand 18",
+              countries: "Eg",
+              startDate: "19-5-2020",
+              EndDate: "27-11-2020",
+              Status: "Active",
+            },
+            {
+              id: 16,
+              campaignName: "Camapign 19",
+              brandName: "Brand 19",
+              countries: "Eg",
+              startDate: "19-5-2020",
+              EndDate: "27-11-2020",
+              Status: "Active",
+            },
+            {
+              id: 16,
+              campaignName: "Camapign 20",
+              brandName: "Brand 20",
+              countries: "Eg",
+              startDate: "19-5-2020",
+              EndDate: "27-11-2020",
+              Status: "Active",
+            },
+            {
+              id: 16,
+              campaignName: "Camapign 21",
+              brandName: "Brand 21",
+              countries: "Eg",
+              startDate: "19-5-2020",
+              EndDate: "27-11-2020",
+              Status: "Active",
+            },
+          ],
+          pageSize: 10,
+          responsive: true,
+        });
+
+        $("#grid").kendoGrid({
+          dataSource: dataSource,
+          pageable: true,
+          columns: [
+            { selectable: true, width: "50px" },
+            { field: "id", title: "ID", width: "50px" },
+            {
+              field: "campaignName",
+              title: "Campaign name",
+              template: '<span class="camp-badge">#: campaignName #</span>',
+            },
+            {
+              field: "brandName",
+              title: "Brand name",
+              template: '<span class="camp-badge">#: brandName #</span>',
+            },
+            {
+              field: "countries",
+              title: "contries",
+              template: '<span class="camp-badge">#: countries #</span>',
+            },
+            {
+              field: "startDate",
+              title: "Start date",
+              template: '<span class="camp-badge">#: startDate #</span>',
+            },
+            {
+              field: "EndDate",
+              title: "End date",
+              template: '<span class="camp-badge">#: EndDate #</span>',
+            },
+            {
+              field: "Status",
+              title: "Status",
+              template: '<span class="status-badge">#: Status #</span>',
+            },
+            {
+              template:
+                '<button class="edit-button k-button">Edit</button> <button class="delete-button k-button">Delete</button>',
+              title: "&nbsp;",
+              width: "200px",
+            },
+          ],
+          editable: false,
+          responsive: true,
+        });
+
+        // Handle the click event on the "Edit" button
+        $("#grid").on("click", ".edit-button", function (e) {
+          e.preventDefault();
+          var dataItem = $("#grid")
+            .data("kendoGrid")
+            .dataItem($(this).closest("tr"));
+          showEditPopup(dataItem);
+        });
+
+        // Handle the click event on the "Delete" button
+        $("#grid").on("click", ".delete-button", function (e) {
+          e.preventDefault();
+          var dataItem = $("#grid")
+            .data("kendoGrid")
+            .dataItem($(this).closest("tr"));
+          deleteRow(dataItem);
+        });
+
+        // Function to show the edit popup
+        function showEditPopup(dataItem) {
+          var popup = $("<div>")
+            .kendoWindow({
+              title: "Edit Item",
+              modal: true,
+              visible: false,
+              resizable: false,
+            })
+            .data("kendoWindow");
+          popup.content($("#editPopupTemplate").html());
+          popup.center().open();
+          kendo.bind(popup.element, dataItem);
+
+          // Save button click event handler
+          popup.element.find("#saveButton").on("click", function (e) {
+            e.preventDefault();
+            dataSource.sync();
+            popup.close();
+          });
+
+          // Cancel button click event handler
+          popup.element.find("#cancelButton").on("click", function (e) {
+            e.preventDefault();
+            popup.close();
+          });
+        }
+
+        // Function to delete a row
+        function deleteRow(dataItem) {
+          dataSource.remove(dataItem);
+          dataSource.sync();
+        }
+      });
+    </script>
+  </body>
+</html>
